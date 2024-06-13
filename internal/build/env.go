@@ -111,8 +111,8 @@ func LocalEnv() Environment {
 		commitRe, _ := regexp.Compile("^([0-9a-f]{40})$")
 		if commit := commitRe.FindString(head); commit != "" && env.Commit == "" {
 			env.Commit = commit
-			env.Date = getDate(env.Commit)
 		}
+		env.Date = getDate(env.Commit)
 		return env
 	}
 	if env.Commit == "" {
